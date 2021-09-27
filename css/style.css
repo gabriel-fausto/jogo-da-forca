@@ -1,0 +1,50 @@
+/* body {
+    background-color: rgb(141, 148, 170);
+} */
+
+#titulo, .font--IBM {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#jogo {
+    border: 2px solid rgb(219, 219, 219);
+    border-radius: 20px;
+
+    position: relative;
+}
+
+#alert-erro {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.letras-erradas--container {
+    background-color: rgb(255, 214, 214);
+}
+
+#palavra {
+    letter-spacing: 7px;
+    color: rgb(56, 56, 56);
+}
+
+#letras--erradas {
+    letter-spacing: 20px;
+}
+
+.jogo--collapse.collapsing {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    visibility: hidden;
+}
+
+.jogo--collapse.collapse.show {
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    visibility: visible;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/forca.css">
+</head>
+
+<body>
+    <main class="container mt-2">
+        <section id="titulo">
+            <h1 class="text-center fw-bold display-1">Jogo da Forca</h1>
+            <h1 class="text-center fw-bold text-warning display-5">Personagens de Harry Potter</h1>
+        </section>
+        <section id="jogo" class="bg-white row p-5 m-auto col-lg-10 col-xl-8 col-xxl-7">
+            <div href="#alert-erro" id="alert-erro" class="alert alert-danger collapse px-2 py-1">
+                <p id="alert-erro--mensagem" class="fs-6 m-0"></p>
+                <button data-bs-toggle="collapse" data-bs-target="#alert-erro" id="exibir--alert--erro"
+                    class="d-none"></button>
+            </div>
+            <section id="jogo--inicio" class="jogo--collapse collapse show">
+                <div class="d-flex">
+                    <button data-bs-toggle="collapse" data-bs-target=".jogo--collapse" id="jogo--btn--jogar"
+                        class="btn btn-danger m-auto shadow" onclick="jogar()"><span class="fs-1">Jogar</span></button>
+                </div>
+            </section>
+            <section id="jogo--container" class="jogo--collapse border p-0 m-0 row collapse">
+                <div class="palavra--container col-12 row m-0 p-0">
+                    <p id="palavra" class="display-6 text-center mb-0 fw-bold"></p>
+                </div>
+                <div class="forca--container mt-2 p-2 col-12 row m-0 p-0 border">
+                    <div id="forca--topo" class="col-12 row m-0 p-0">
+                        <div id="forca--topo--lateral" class="col-2 p-0 m-0"></div>
+                        <div id="forca--topo--centro" class="col-2 p-0 m-0"></div>
+                    </div>
+                    <div id="forca--centro" class="col-12 row m-0 p-0">
+                        <div id="forca--centro--lateral" class="col-2 p-0 m-0"></div>
+                        <div class="col-4 p-0 m-0">
+                            <div id="cabeca" class="col-12 mt-1 ps-0 d-flex flex-column align-items-center">
+                                <img id="corpo--1" class="img--cabeca" src="./img/cabeca.png" alt="">
+                            </div>
+                            <div id="corpo"
+                                class="col-12 ps-0 d-flex flex-row justify-content-center align-items-start">
+                                <img id="corpo--3" class="img--braco" src="./img/braco-1.png" alt="">
+                                <img id="corpo--2" class="img--corpo" src="./img/corpo.png" alt="">
+                                <img id="corpo--4" class="img--braco" src="./img/braco-2.png" alt="">
+                            </div>
+                            <div id="perna"
+                                class="col-12 ps-0 d-flex flex-row justify-content-center align-items-start">
+                                <img id="corpo--5" class="img--perna" src="./img/perna-1.png" alt="">
+                                <img id="corpo--6" class="img--perna" src="./img/perna-2.png" alt="">
+                            </div>
+                        </div>
+                        <div id="forca--inputs"
+                            class="col-5 d-flex flex-column justify-content-start align-items-center">
+                            <label class="font--IBM fw-bold text-center" for="forca--input--letra">LETRA</label>
+                            <input id="forca--input--letra" onkeyup="validarEnter(event)" name="forca--input--letra"
+                                maxlength="1" type="text">
+                            <input id="forca--btn--letra" type="button" class="btn btn-dark px-0 mt-1 shadow"
+                                onclick="enviarLetra()" value="enviar">
+                        </div>
+                        <div id="forca--derrota"
+                            class="col-5 d-flex flex-column justify-content-start align-items-center">
+                            <h3 class="font--IBM fw-bold text-center">game over :(</h3>
+                            <button class="btn btn-danger shadow mt-1" onclick="jogar()">tentar de
+                                novo?</button>
+                        </div>
+                        <div id="forca--vitoria"
+                            class="col-5 d-flex flex-column justify-content-start align-items-center">
+                            <h3 class="font--IBM fw-bold text-center">Parabéns! Você ganhou</h3>
+                            <button class="btn btn-success shadow mt-1" onclick="jogar()">Jogar mais uma!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="letras-erradas--container col-12 row m-0 p-0">
+
+                    <p id="letras--erradas" class="display-6 m-0 text-center"></p>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+<script src="./js/jogoDaForca.js"></script>
+
+</html>

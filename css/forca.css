@@ -1,0 +1,71 @@
+#forca--topo--lateral {
+    border: 10px solid rgb(88, 88, 88);
+    border-bottom: 0;
+    border-right: 0;
+    height: 10vw;
+    max-height: 50px;
+}
+
+#forca--topo--centro {
+    border: 10px solid rgb(88, 88, 88);
+    border-bottom: 0;
+    border-left: 0;
+    height: 10vw;
+    max-height: 50px;
+}
+
+#forca--centro--lateral {
+    box-sizing: border-box;
+    border-left: 10px solid rgb(88, 88, 88);
+    height: 27vw;
+    min-height: 150px;
+    max-height: 270px;
+}
+
+#img--cabeca {
+    width: 30%;
+    min-width: 35px;
+}
+
+#cabeca, #corpo, #perna {
+    padding-right: 10px;
+}
+
+.img--cabeca, .img--braco, .img--perna {
+    width: 30%;
+    min-width: 35px;
+}
+
+.img--corpo {
+    width: 2.4%;
+    min-width: 2.8px;
+}
+
+#forca--input--letra {
+    height: 60px;
+    width: 60px;
+
+    border: 2px solid rgb(207, 207, 207);
+    border-radius: 5px;
+
+    padding-bottom: 4px;
+
+    text-align: center;
+    font-size: 35px;
+    color: rgb(92, 92, 92);
+    
+}
+
+#forca--input--letra:focus {
+    outline: none !important;
+    border: 2px solid rgb(197, 81, 81);
+}
+
+#forca--btn--letra {
+    width: 60px;
+}
+
+
+/* 
+height: 50vw;
+max-height: 300px; */
